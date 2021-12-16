@@ -1,0 +1,5 @@
+godaddy-ddns/bin
+godaddy-ddns/obj
+build
+.vscode
+.env
