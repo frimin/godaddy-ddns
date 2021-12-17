@@ -114,7 +114,8 @@ namespace GoDaddyDDNS
                 {
                     ipAddress = await DDNSRequest.RequestGetSelfIpAddressAsync(client, config, cancelToken.Token);
 
-                    Console.WriteLine($"#{checkCount} IP={ipAddress}");
+                    if (fullLog)
+                        Console.WriteLine($"#{checkCount} IP={ipAddress}");
                 }
                 catch (Exception e)
                 {
