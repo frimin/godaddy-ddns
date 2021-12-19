@@ -2,6 +2,8 @@
 
 自动更新当前 IP 地址到 godaddy 域名解析中。
 
+不喜欢 docker & dotnet ? 使用 bash 脚本随 systemd 启动 [godaddy-ddns-bash](https://github.com/frimin/godaddy-ddns-bash)
+
 # 构建
 
 ## 本地构建
@@ -14,9 +16,9 @@
 
 ## 构建 Docker 镜像
 
-安装 docker 和 docker-compose，执行:
+安装 docker 和 docker-compose, 编辑环境变量参数到 .env 文件或者直接修改 docker-compose.yml 中，执行:
 
-    docker-compose build && docker-compose up
+    $ docker-compose build && docker-compose up
 
 # 参数
 
@@ -30,7 +32,7 @@ API-KEY 从 https://developer.godaddy.com/keys/ 获取。
 | --domain | GODADDY_DDNS_DOMAIN | 域名名称 (例如 name.abc.com 中的 abc.com) |
 | --get-ip-url | GODADDY_DDNS_GET_IP_URL | 重新指定获取当前 IP 的服务地址，默认为 https://icanhazip.com |
 | --interval | GODADDY_DDNS_INTERVAL | 检查间隔，单位秒，默认 300 |
-| --ttl | GODADDY_DDNS_TLL | 指定域名TTL，默认 600 |
+| --ttl | GODADDY_DDNS_TTL | 指定域名TTL，默认 600 |
 | --ipv6 | GODADDY_DDNS_IPV6 | 强制使用 IPV6 请求当前公网地址，默认 0 |
 | --full-log | GODADDY_DDNS_FULL_LOG | 输出完整日志，默认 0 |
 | --without-loop-check | GODADDY_DDNS_WITHOUT_LOOP_CHECK | 不要循环检查，默认 0|
